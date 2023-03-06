@@ -423,8 +423,11 @@ local function InternalSpawnNPC( ply, Position, Normal, Class, Equipment, SpawnF
 	--
 	-- This NPC has a special model we want to define
 	--
-	if ( NPCData.Model ) then
-		NPC:SetModel( NPCData.Model )
+	local npcModel = NPCData.Model
+	if (npcModel) and type(npcModel) == "string" then
+		NPC:SetModel(npcModel)
+	elseif (npcModel) and type(npcModel) == "table" then
+		NPC:SetModel(npcModel[math.random(#npcModel)])
 	end
 
 	--
