@@ -48,8 +48,8 @@ function SWEP:DrawWeaponSelection( x, y, wide, tall, alpha )
 	y = y + 10
 	x = x + 10
 	wide = wide - 20
-
-	-- Draw that mother
+	
+	-- Draw a rectangle
 	surface.DrawTexturedRect( x + fsin, y - fsin,  wide - fsin * 2 , ( wide / 2 ) + fsin )
 
 	-- Draw weapon info box
